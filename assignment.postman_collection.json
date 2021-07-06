@@ -1,0 +1,289 @@
+{
+	"info": {
+		"_postman_id": "e50aa6bb-e80b-4326-a477-6770782df568",
+		"name": "assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "yash",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "user2@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "yash123",
+									"type": "text"
+								},
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/D:/Extras/Learning/imgaes/users/user2.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/users/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"users",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"user1@gmail.com\",\r\n    \"password\":\"pavan123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "post",
+			"item": [
+				{
+					"name": "Create Post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGUzZTRkYThkNzMyYzNlY2M2MjUxMmMiLCJuYW1lIjoicGF2YW4iLCJlbWFpbCI6InVzZXIxQGdtYWlsLmNvbSIsImlzc3VlZF9hdCI6MTYyNTU0ODQ3MDE3NywiaWF0IjoxNjI1NTQ4NDcwLCJleHAiOjE2MjgxNDA0NzB9.aHXz9gika9KMuAYYpXi2PjhpD_-W4gPL2voySU7H3T0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "any_title_3",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "any_desc_3",
+									"type": "text"
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": "/D:/Extras/Learning/imgaes/posts/post3.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/post",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPosts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGUzZTRkYThkNzMyYzNlY2M2MjUxMmMiLCJuYW1lIjoicGF2YW4iLCJlbWFpbCI6InVzZXIxQGdtYWlsLmNvbSIsImlzc3VlZF9hdCI6MTYyNTU0ODQ3MDE3NywiaWF0IjoxNjI1NTQ4NDcwLCJleHAiOjE2MjgxNDA0NzB9.aHXz9gika9KMuAYYpXi2PjhpD_-W4gPL2voySU7H3T0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/post?skip=0&limit=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"post"
+							],
+							"query": [
+								{
+									"key": "skip",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPostById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGUzZTRkYThkNzMyYzNlY2M2MjUxMmMiLCJuYW1lIjoicGF2YW4iLCJlbWFpbCI6InVzZXIxQGdtYWlsLmNvbSIsImlzc3VlZF9hdCI6MTYyNTU0ODQ3MDE3NywiaWF0IjoxNjI1NTQ4NDcwLCJleHAiOjE2MjgxNDA0NzB9.aHXz9gika9KMuAYYpXi2PjhpD_-W4gPL2voySU7H3T0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/post/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"post",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "60e3e90e6f1bff13147b58d4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Post",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGUzZTRkYThkNzMyYzNlY2M2MjUxMmMiLCJuYW1lIjoicGF2YW4iLCJlbWFpbCI6InVzZXIxQGdtYWlsLmNvbSIsImlzc3VlZF9hdCI6MTYyNTU0ODQ3MDE3NywiaWF0IjoxNjI1NTQ4NDcwLCJleHAiOjE2MjgxNDA0NzB9.aHXz9gika9KMuAYYpXi2PjhpD_-W4gPL2voySU7H3T0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/post/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"post",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "60e3e90e6f1bff13147b58d4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Post",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGUzZTRkYThkNzMyYzNlY2M2MjUxMmMiLCJuYW1lIjoicGF2YW4iLCJlbWFpbCI6InVzZXIxQGdtYWlsLmNvbSIsImlzc3VlZF9hdCI6MTYyNTU0ODQ3MDE3NywiaWF0IjoxNjI1NTQ4NDcwLCJleHAiOjE2MjgxNDA0NzB9.aHXz9gika9KMuAYYpXi2PjhpD_-W4gPL2voySU7H3T0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "updated_title_2",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "updated_dec_2",
+									"type": "text"
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": "/D:/Extras/Learning/imgaes/posts/post2.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/post/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"post",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "60e3e9016f1bff13147b58d2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
